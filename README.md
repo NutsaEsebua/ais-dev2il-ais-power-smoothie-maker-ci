@@ -318,8 +318,13 @@ uv run pytest
 ```
 
 **With PyCharm:**
-- Right-click the test file or function and select to run Python tests.
-- You might need to configure PyCharm to use `pytest` as the test runner in _Preferences > Python > Tools > Integrated Tools > Default test runner: pytest_
+- Right-click the test file or function and select _Run pytest_. You can also click on the green play button next to the test function in the editor.
+- You might need to configure which Python interpreter PyCharm uses for running tests. You can set the interpreter in the lower right corner of PyCharm. Select
+  `uv` in combination with your project to ensure that the tests run in the correct environment (it looks like `uv (ais-dev2il-ais-power-smoothie-maker)`). If you 
+   don't see it, use the _Add New Interpreter_ in order to add a `uv` interpreter. **Windows Users**: Make sure to select the WSL/Ubuntu environment for the interpreter! 
+  This feature is only available if you activated the Pro version of PyCharm. If you did not already activate the Pro version, you can see a button in the upper right corner
+  or PyCharm.
+- You might need to configure PyCharm to use `pytest` as the test runner in _PyCharm > Settings > Python > Tools > Integrated Tools > Default test runner: pytest_
 
 ### Step 5 - See what happens when things change
 
@@ -414,7 +419,8 @@ Let's consider that we have to take `make_smoothie` as it is, but we still want 
 outputs the ingredients.
 
 Try to write a test for `make_smoothie` that calls the function and verifies that ingredients are printed out.
-*   **Hint**: You can use the [`capsys` fixture](https://docs.pytest.org/en/stable/builtin.html) from pytest to capture standard output.  
+
+**Hint**: You can use the [`capsys` fixture](https://docs.pytest.org/en/stable/reference/reference.html#fixtures) from pytest to capture standard output.  
 
 <details>
 <summary>👀 Show Solution</summary>
